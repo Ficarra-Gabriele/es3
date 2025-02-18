@@ -1,6 +1,4 @@
-﻿
-
-int[,] m1 = { {0, 0, 0, 0, 0},
+﻿int[,] m1 = { {0, 0, 0, 0, 0}, // esercizio G
               {0, 0, 0, 0, 0},
               {0, 0, 0, 0, 0},
               {0, 0, 0, 0, 0},
@@ -17,6 +15,17 @@ for (int i = 0; i < m1.GetLength(0); i++)
         {
             m1[i, n] = -1;
         }
+        Console.Write("[" + m1[i, j] + "]");
+    }
+    Console.WriteLine();
+} // esercizio G
+
+Console.WriteLine();
+
+for (int i = 0; i < m1.GetLength(0); i++) // esercizio H
+{
+    for (int j = 0; j < m1.GetLength(0); j++)
+    {
         Console.Write("[" + m1[i, j] + "]");
     }
     Console.WriteLine();
