@@ -21,12 +21,40 @@ for (int i = 0; i < m1.GetLength(0); i++)
 } // esercizio G
 
 Console.WriteLine();
-
-for (int i = 0; i < m1.GetLength(0); i++) // esercizio H
+void somma_celle(int[,] m)
 {
-    for (int j = 0; j < m1.GetLength(0); j++)
+    int s1 = 0, s2 = 0, s3 = 0;
+    for (int i = 0; i < m.GetLength(0); i++)
     {
-        Console.Write("[" + m1[i, j] + "]");
+        for (int j = 0; j < m.GetLength(0); j++)
+        {
+            if (i == 0 || j == 0)
+            {
+                m[i, j] = m[i + 1, j + 1] + m[i, j + 1] + m[i + 1, j];
+            }
+            else if (i == m.GetLength(0) - 1 || j == m.GetLength(1) - 1)
+            {
+                m[i, j] = m[i - 1, j - 1] + m[i, j - 1] + m[i - 1, j];
+            }
+            else if (i == m.GetLength(0) - 1 && j == 0)
+            {
+                m[i, j] = m[i, j + 1] + m[i - 1, j + 1] + m[i - 1, j];
+            }
+            else if (i == 0 && j == m.GetLength(1) - 1)
+            {
+                m[i, j] = m[i + 1, j] + m[i + 1, j - 1] + m[i, j - 1];
+            }
+
+        }
     }
-    Console.WriteLine();
+    for (int i = 0; i < m.GetLength(0); i++)
+    {
+        for (int j = 0; j < m.GetLength(0); j++)
+        {
+
+            Console.Write(m[i, j]);
+        }
+        Console.WriteLine();
+    }
 }
+somma_celle(m1);
